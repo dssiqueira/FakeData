@@ -1,0 +1,148 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Alterar a fonte para Poppins */
+    background-color: #183153; /* Fundo na cor #183153 */
+    color: white; /* Textos na cor branca */
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-bottom: 60px; /* Espaço para o rodapé */
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white; /* Textos na cor branca */
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold; /* Texto em negrito */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 62px;
+    flex: 1;
+    max-width: 150px;
+    margin-right: 10px;
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
+  }
+  
+  .btn-cpf {
+    background-color: #d1e7dd;
+  }
+  
+  .btn-cnpj {
+    background-color: #fef6d5;
+  }
+  
+  .btn-cep {
+    background-color: #ffecd2;
+  }
+  
+  .output-container {
+    display: flex;
+    align-items: center;
+    width: 300px; /* Largura de 300px */
+    height: 62px; /* Altura fixa de 62px */
+    margin-left: 10px;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
+  }
+  
+  .output {
+    font-size: 16px;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    position: relative; /* Needed for tooltip positioning */
+  }
+  
+  .copiar-btn, .mascarar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #6c757d;
+    display: none;
+    transition: color 0.3s;
+    margin-left: 5px;
+  }
+  
+  .copiar-btn.copied {
+    color: #32CD32; /* Verde suave */
+  }
+  
+  .mascarar-btn.active {
+    color: #FF6347; /* Vermelho suave */
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .icons.copied .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer i {
+    color: red;
+  }
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Data</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <h1>Fake Data</h1>
+  </div>
+  
+  <div class="container">
+    <button id="gerar-cpf-btn" class="btn-cpf">Gerar CPF</button>
+    <div class="output-container">
+      <p id="cpf-gerado" class="output"></p>
+      <div class="icons">
+        <button id="mascarar-cpf-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+        <button id="copiar-cpf-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+        <span class="tooltip">Copiado!</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <button id="gerar-cnpj-btn" class="btn-cnpj">Gerar CNPJ</button>
+    <div class="output-container">
+      <p id="cnpj-gerado" class="output"></p>
+      <div class="icons">
+        <button id="mascarar-cnpj-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+        <button id="copiar-cnpj-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+        <span class="tooltip">Copiado!</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <button id="gerar-cep-btn" class="btn-cep">Gerar CEP</button>
+    <div class="output-container">
+      <p id="cep-gerado" class="output"></p>
+      <div class="icons">
+        <button id="mascarar-cep-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+        <button id="copiar-cep-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+        <span class="tooltip">Copiado!</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Desenvolvedor <i class="fas fa-heart"></i> <a href="https://dsiqueira.com" target="_blank">Dsiqueira</a></p>
+  </footer>
+
+  <script src="gerar.js"></script>
+  <script src="mascarar.js"></script>
+  <script src="copiar.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
