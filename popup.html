@@ -10,40 +10,165 @@
 <body>
   <div class="header">
     <h1>Fake Data</h1>
+    <input type="text" id="search-bar" placeholder="Buscar documento..." />
   </div>
-  
-  <div class="container">
-    <button id="gerar-cpf-btn" class="btn-cpf">Gerar CPF</button>
-    <div class="output-container">
-      <p id="cpf-gerado" class="output"></p>
-      <div class="icons">
-        <button id="mascarar-cpf-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
-        <button id="copiar-cpf-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
-        <span class="tooltip">Copiado!</span>
+
+  <div class="document-list">
+    <div class="container" data-doc="CPF">
+      <button id="gerar-cpf-btn" class="btn-cpf">Gerar CPF</button>
+      <div class="output-container">
+        <p id="cpf-gerado" class="output"></p>
+        <div class="icons">
+          <button id="mascarar-cpf-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+          <button id="copiar-cpf-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="container">
-    <button id="gerar-cnpj-btn" class="btn-cnpj">Gerar CNPJ</button>
-    <div class="output-container">
-      <p id="cnpj-gerado" class="output"></p>
-      <div class="icons">
-        <button id="mascarar-cnpj-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
-        <button id="copiar-cnpj-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
-        <span class="tooltip">Copiado!</span>
+
+    <div class="container" data-doc="CNPJ">
+      <button id="gerar-cnpj-btn" class="btn-cnpj">Gerar CNPJ</button>
+      <div class="output-container">
+        <p id="cnpj-gerado" class="output"></p>
+        <div class="icons">
+          <button id="mascarar-cnpj-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+          <button id="copiar-cnpj-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="container">
-    <button id="gerar-cep-btn" class="btn-cep">Gerar CEP</button>
-    <div class="output-container">
-      <p id="cep-gerado" class="output"></p>
-      <div class="icons">
-        <button id="mascarar-cep-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
-        <button id="copiar-cep-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
-        <span class="tooltip">Copiado!</span>
+
+    <div class="container" data-doc="CEP">
+      <button id="gerar-cep-btn" class="btn-cep">Gerar CEP</button>
+      <div class="output-container">
+        <p id="cep-gerado" class="output"></p>
+        <div class="icons">
+          <button id="mascarar-cep-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+          <button id="copiar-cep-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="CNS">
+      <button id="gerar-cns-btn" class="btn-cns">Gerar CNS</button>
+      <div class="output-container">
+        <p id="cns-gerado" class="output"></p>
+        <div class="icons">
+          <button id="mascarar-cns-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
+          <button id="copiar-cns-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="Passaporte">
+      <button id="gerar-passaporte-btn" class="btn-passaporte">Gerar Passaporte</button>
+      <div class="output-container">
+        <p id="passaporte-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-passaporte-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="CNH">
+      <button id="gerar-cnh-btn" class="btn-cnh">Gerar CNH</button>
+      <div class="output-container">
+        <p id="cnh-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-cnh-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="PIS">
+      <button id="gerar-pis-btn" class="btn-pis">Gerar PIS/PASEP</button>
+      <div class="output-container">
+        <p id="pis-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-pis-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="Título de Eleitor">
+      <button id="gerar-titulo-btn" class="btn-titulo">Gerar Título de Eleitor</button>
+      <div class="output-container">
+        <p id="titulo-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-titulo-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="RG">
+      <button id="gerar-rg-btn" class="btn-rg">Gerar RG</button>
+      <div class="output-container">
+        <p id="rg-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-rg-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="CTPS">
+      <button id="gerar-ctps-btn" class="btn-ctps">Gerar CTPS</button>
+      <div class="output-container">
+        <p id="ctps-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-ctps-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="IE">
+      <button id="gerar-ie-btn" class="btn-ie">Gerar Inscrição Estadual</button>
+      <div class="output-container">
+        <p id="ie-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-ie-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="NIT">
+      <button id="gerar-nit-btn" class="btn-nit">Gerar NIT</button>
+      <div class="output-container">
+        <p id="nit-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-nit-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="CRLV">
+      <button id="gerar-crlv-btn" class="btn-crlv">Gerar CRLV</button>
+      <div class="output-container">
+        <p id="crlv-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-crlv-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-doc="CAM">
+      <button id="gerar-cam-btn" class="btn-cam">Gerar CAM</button>
+      <div class="output-container">
+        <p id="cam-gerado" class="output"></p>
+        <div class="icons">
+          <button id="copiar-cam-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
+          <span class="tooltip">Copiado!</span>
+        </div>
       </div>
     </div>
   </div>
