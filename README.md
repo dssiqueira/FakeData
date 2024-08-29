@@ -2,7 +2,7 @@
 
 ![Extension Preview](https://via.placeholder.com/800x400.png?text=Fake+Data+Generator+Preview)
 
-> Geração rápida e fácil de CPF, CNPJ e CEP válidos diretamente no seu navegador Chrome! Essa extensão foi desenvolvida para ajudar desenvolvedores e testadores a gerarem dados válidos para seus projetos de forma simples e rápida.
+> Geração rápida e fácil de CPF, CNPJ, CNH e outros documentos válidos diretamente no seu navegador Chrome! Esta extensão foi desenvolvida para ajudar desenvolvedores e testadores a gerarem dados válidos para seus projetos de forma simples e rápida.
 
 ## 📋 Índice
 
@@ -16,9 +16,13 @@
 
 ## ✨ Funcionalidades
 
-- Geração de CPF válido com ou sem máscara.
-- Geração de CNPJ válido com ou sem máscara.
-- Geração de CEP válido com ou sem máscara.
+- Geração de **CPF** válido com ou sem máscara.
+- Geração de **CNPJ** válido com ou sem máscara.
+- Geração de **CNH** válida.
+- Geração de **PIS/PASEP** válido.
+- Geração de **CRLV** (Certificado de Registro e Licenciamento de Veículo).
+- Geração de **Passaporte** válido.
+- Geração de **CAM** (Cadastro de Atividades Médicas) válido.
 - Copie os dados gerados com um clique.
 - Interface simples, elegante e fácil de usar.
 
@@ -35,7 +39,7 @@
 ## 🖱️ Como Usar
 
 1. Clique no ícone da extensão no canto superior direito do Chrome.
-2. Escolha o tipo de dado que deseja gerar: **CPF**, **CNPJ** ou **CEP**.
+2. Escolha o tipo de dado que deseja gerar: **CPF**, **CNPJ**, **CNH**, **PIS/PASEP**, **CRLV**, **Passaporte** ou **CAM**.
 3. Clique no botão de **Gerar**.
 4. Use os botões de **Mascarar** para aplicar a formatação ou **Copiar** para copiar o dado gerado para a área de transferência.
 5. Pronto! Agora você tem um dado válido para usar onde precisar.
