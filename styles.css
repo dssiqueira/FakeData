@@ -21,13 +21,52 @@ h1 {
   margin: 0;
 }
 
-input#search-bar {
+/* Ajustes para o search-box */
+.search-box {
+  width: 300px; /* Tamanho fixo para o campo expandido */
+  height: 50px;
+  position: relative;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  display: flex;
+  align-items: center;
+}
+
+.input-search {
+  height: 50px;
   width: 100%;
-  padding: 8px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 0; /* Sem borda arredondada para manter o estilo anterior */
+  background-color: transparent; /* Torna o fundo transparente como após a animação */
+  border-bottom: 1px solid rgba(255, 255, 255, .5); /* Mantém a borda inferior */
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Placeholder visível */
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%; /* Botão circular */
+  position: absolute;
+  right: 10px; /* Ajuste para alinhar dentro do campo de busca */
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: none; /* Para garantir que o clique vá para o campo de input */
 }
 
 .container {
