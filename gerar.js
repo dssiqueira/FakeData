@@ -12,14 +12,27 @@ function gerarCPF() {
 
 // Função para gerar um CNPJ válido
 function gerarCNPJ() {
-  const random = (n) => Math.round(Math.random() * n);
-  const mod = (base, div) => Math.round(base - Math.floor(base / div) * div);
+  const random = () => Math.floor(Math.random() * 10);
+  let cnpj = Array.from({ length: 12 }, random).join('');
 
-  const n = Array.from({ length: 12 }, () => random(9));
-  const d1 = mod(n.reduce((total, num, idx) => total + num * (idx < 4 ? 5 - idx : 9 - idx), 0) * 10, 11);
-  const d2 = mod([...n, d1].reduce((total, num, idx) => total + num * (idx < 5 ? 6 - idx : 10 - idx), 0) * 10, 11);
+  const pesosPrimeiroDV = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+  const pesosSegundoDV = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
-  return [...n, d1, d2].join('');
+  const calcularDV = (base, pesos) => {
+    const soma = base
+      .split('')
+      .reduce((acc, num, idx) => acc + parseInt(num) * pesos[idx], 0);
+    let dv = 11 - (soma % 11);
+    return dv >= 10 ? 0 : dv;
+  };
+
+  const primeiroDV = calcularDV(cnpj, pesosPrimeiroDV);
+  cnpj += primeiroDV;
+
+  const segundoDV = calcularDV(cnpj, pesosSegundoDV);
+  cnpj += segundoDV;
+
+  return cnpj;
 }
 
 // Função para gerar um CEP válido
