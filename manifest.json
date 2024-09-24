@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Gerador de CPF",
+    "name": "Fake Data Generator",
     "version": "1.0",
-    "description": "Uma extensão simples para gerar CPFs válidos",
+    "description": "Gera dados para testar aplicações",
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
@@ -16,7 +16,8 @@
     },
     "permissions": [
       "activeTab",
-      "scripting"
+      "scripting",
+      "storage"
     ],
     "icons": {
       "16": "icons/icon16.png",
