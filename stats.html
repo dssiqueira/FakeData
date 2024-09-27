@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Estatísticas</title>
+  <link rel="stylesheet" href="stats.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <i id="back-btn" class="fas fa-arrow-left"></i>
+    <h1>Estatísticas</h1>
+  </div>
+
+  <div class="podium-container">
+    <div class="podium-bar second-place-bar" id="second-place">
+      <div class="medal">
+        <i class="fas fa-medal silver-medal"></i>
+      </div>
+      <div class="document-name" id="second-place-name"></div>
+      <div class="count" id="second-place-count"></div>
+    </div>
+    <div class="podium-bar first-place-bar" id="first-place">
+      <div class="medal">
+        <i class="fas fa-medal gold-medal"></i>
+      </div>
+      <div class="document-name" id="first-place-name"></div>
+      <div class="count" id="first-place-count"></div>
+    </div>
+    <div class="podium-bar third-place-bar" id="third-place">
+      <div class="medal">
+        <i class="fas fa-medal bronze-medal"></i>
+      </div>
+      <div class="document-name" id="third-place-name"></div>
+      <div class="count" id="third-place-count"></div>
+    </div>
+  </div>
+
+  <div class="stats-list" id="stats-list">
+    <!-- Lista de todos os documentos e seus valores será preenchida pelo JavaScript -->
+  </div>
+
+  <script src="libs/confetti.browser.min.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

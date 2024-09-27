@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #183153;
+    color: white;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #back-btn {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #ccc;
+    opacity: 0.7;
+  }
+  
+  #back-btn:hover {
+    opacity: 1;
+  }
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+  
+  .podium-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 30px 0;
+    height: 250px;
+  }
+  
+  .podium-bar {
+    position: relative;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .first-place-bar {
+    height: 200px;
+    background-color: #ffd700;
+  }
+  
+  .second-place-bar {
+    height: 150px;
+    background-color: #c0c0c0;
+  }
+  
+  .third-place-bar {
+    height: 100px;
+    background-color: #cd7f32;
+  }
+  
+  .medal {
+    position: absolute;
+    top: -40px;
+    font-size: 36px;
+  }
+  
+  .gold-medal {
+    color: #ffd700;
+  }
+  
+  .silver-medal {
+    color: #c0c0c0;
+  }
+  
+  .bronze-medal {
+    color: #cd7f32;
+  }
+  
+  .podium-bar .document-name {
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .podium-bar .count {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+  .stats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .stats-item {
+    background-color: #2b3e5f;
+    padding: 15px;
+    border-radius: 10px;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+  }
+  
+  .stats-item .document-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .stats-item .count {
+    font-size: 18px;
+    margin-top: 5px;
+  }
