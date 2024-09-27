@@ -47,6 +47,7 @@
       <div class="output-container">
         <p id="cep-gerado" class="output"></p>
         <div class="icons">
+          <button id="mapa-cep-btn" class="mapa-btn"><i class="fas fa-globe"></i></button>
           <button id="mascarar-cep-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
           <button id="copiar-cep-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
           <span class="tooltip">Copiado!</span>
@@ -176,6 +177,15 @@
       </div>
     </div>
   </div>
+
+<!-- Modal -->
+<div id="cep-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Informações do CEP</h2>
+    <div id="cep-info"></div>
+  </div>
+</div>
 
   <footer>
     <p>Desenvolvedor <i class="fas fa-heart"></i> <a href="https://dsiqueira.com" target="_blank">Dsiqueira</a><span id="version"></span></p>

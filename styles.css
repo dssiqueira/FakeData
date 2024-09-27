@@ -23,10 +23,10 @@ h1 {
 
 /* Ajustes para o search-box */
 .search-box {
-  width: 300px; /* Tamanho fixo para o campo expandido */
+  width: 300px;
   height: 50px;
   position: relative;
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 0 auto;
   display: flex;
   align-items: center;
 }
@@ -39,15 +39,15 @@ h1 {
   font-size: 18px;
   letter-spacing: 2px;
   outline: none;
-  border-radius: 0; /* Sem borda arredondada para manter o estilo anterior */
-  background-color: transparent; /* Torna o fundo transparente como após a animação */
-  border-bottom: 1px solid rgba(255, 255, 255, .5); /* Mantém a borda inferior */
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
   padding-right: 40px;
   color: #fff;
 }
 
 .input-search::placeholder {
-  color: rgba(255, 255, 255, 0.7); /* Placeholder visível */
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
@@ -61,12 +61,12 @@ h1 {
   font-weight: bold;
   outline: none;
   cursor: pointer;
-  border-radius: 50%; /* Botão circular */
+  border-radius: 50%;
   position: absolute;
-  right: 10px; /* Ajuste para alinhar dentro do campo de busca */
+  right: 10px;
   color: #ffffff;
   background-color: transparent;
-  pointer-events: none; /* Para garantir que o clique vá para o campo de input */
+  pointer-events: none;
 }
 
 .container {
@@ -137,7 +137,7 @@ button {
   position: relative;
 }
 
-.copiar-btn, .mascarar-btn {
+.copiar-btn, .mascarar-btn, .mapa-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -196,4 +196,141 @@ footer a {
 
 footer i {
   color: red;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #183153;
+}
+
+.modal-content p {
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.copy-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.copy-btn:hover {
+  background-color: #45a049;
+}
+
+.copy-btn-modal i {
+  margin-right: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Output Container */
+.output-container-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  max-width: 95%;
+}
+
+/* Alinha o botão de copiar no modal */
+.copy-btn-modal {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #6c757d;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: flex-end;
+  padding: 5px;
+  margin-left: auto;
+}
+
+.copy-btn-modal:hover {
+  color: #007bff;
+}
+
+.copy-btn-modal.copied {
+  color: #32CD32;
+}
+
+/* Tooltip for copy button in modal */
+.tooltip-modal {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.copy-btn-modal.copied + .tooltip-modal {
+  visibility: visible;
+  opacity: 1;
 }
