@@ -1,0 +1,89 @@
+/* config.css - Estilos específicos para a página de configurações */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #183153;
+    color: white;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Mensagem de sucesso */
+#success-message {
+    text-align: center;
+    color: #4CAF50; /* Cor verde suave */
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#success-message.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo do input, similar ao usado no popup.html */
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    height: 50px;
+    width: 100%;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    padding-right: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 50px; /* Mesma altura do input */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Botão de voltar */
+#back-btn {
+    background-color: #6c757d;
+}
+
+#back-btn:hover {
+    background-color: #5a6268;
+}

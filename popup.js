@@ -236,3 +236,8 @@ window.addEventListener('click', function(event) {
     modal.style.display = 'none';
   }
 });
+
+// Botão de configuração
+document.getElementById('open-settings').addEventListener('click', function() {
+  window.location.href = 'config.html'; // Redireciona para a página de configurações
+});

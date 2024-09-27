@@ -19,6 +19,22 @@ h1 {
   font-weight: bold;
   color: white;
   margin: 0;
+  position: relative;
+}
+
+/* Ajuste para o ícone da engrenagem */
+.gear-icon {
+  position: fixed; /* Para fixar o ícone */
+  top: 10px; /* Ajustar a posição no topo */
+  left: 10px; /* Alinhar à esquerda */
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1000;
+}
+
+.gear-icon:hover {
+  color: #ccc;
 }
 
 /* Ajustes para o search-box */
@@ -26,7 +42,7 @@ h1 {
   width: 300px;
   height: 50px;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 30px; /* Adicionando mais espaçamento na parte inferior */
   display: flex;
   align-items: center;
 }
@@ -69,6 +85,7 @@ h1 {
   pointer-events: none;
 }
 
+/* Container dos botões de gerar */
 .container {
   display: flex;
   align-items: center;
@@ -93,6 +110,7 @@ button {
   color: black;
 }
 
+/* Cores dos botões de gerar */
 .btn-cpf { background-color: #d1e7dd; }
 .btn-cnpj { background-color: #fef6d5; }
 .btn-cep { background-color: #ffecd2; }
@@ -108,6 +126,7 @@ button {
 .btn-crlv { background-color: #ffd5d5; }
 .btn-cam { background-color: #d5e1d5; }
 
+/* Output container */
 .output-container {
   display: flex;
   align-items: center;
@@ -283,11 +302,8 @@ footer i {
   background-color: #fff;
   color: #333;
   margin-bottom: 10px;
-  box-sizing: border-box;
-  max-width: 95%;
 }
 
-/* Alinha o botão de copiar no modal */
 .copy-btn-modal {
   background: none;
   border: none;
@@ -298,9 +314,6 @@ footer i {
   display: flex;
   align-items: center;
   position: relative;
-  justify-content: flex-end;
-  padding: 5px;
-  margin-left: auto;
 }
 
 .copy-btn-modal:hover {
@@ -326,8 +339,6 @@ footer i {
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
-  width: max-content;
-  white-space: nowrap;
 }
 
 .copy-btn-modal.copied + .tooltip-modal {
