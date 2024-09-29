@@ -241,13 +241,14 @@ footer i {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
+  background-color: #1c3a5d; /* Cor consistente com a interface principal */
+  padding: 30px;
   border-radius: 10px;
   width: 400px;
   max-width: 90%;
@@ -255,67 +256,31 @@ footer i {
   text-align: center;
   max-height: 80%;
   overflow-y: auto;
+  position: relative;
 }
 
 .modal-content h2 {
   margin-top: 0;
   font-size: 24px;
-  color: #183153;
+  color: #ffffff;
 }
 
-.modal-content p {
-  text-align: left;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.copy-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.copy-btn:hover {
-  background-color: #45a049;
-}
-
-.copy-btn-modal i {
-  margin-right: 5px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Modal Output Container */
 .output-container-modal {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 20px); /* Garantir espaço lateral */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
-  color: #333;
-  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 10px auto; /* Ajustando margens laterais */
+  font-size: 18px; /* Aumentar o tamanho da fonte */
+}
+
+.output-container-modal p {
+  font-weight: bold; /* Aplicando negrito nas chaves */
 }
 
 .copy-btn-modal {
@@ -325,9 +290,8 @@ footer i {
   font-size: 20px;
   color: #6c757d;
   transition: color 0.3s;
-  display: flex;
-  align-items: center;
-  position: relative;
+  margin-left: auto; /* Garantir que o botão fique alinhado à direita */
+  text-align: right;
 }
 
 .copy-btn-modal:hover {
@@ -353,9 +317,46 @@ footer i {
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
+  white-space: nowrap;
 }
 
 .copy-btn-modal.copied + .tooltip-modal {
   visibility: visible;
   opacity: 1;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.api-note {
+  text-align: center;
+  font-size: 8px;
+  margin-top: -10px; /* Ajustar o espaçamento para ficar próximo ao título */
+  margin-bottom: 10px;
+}
+
+.api-link {
+  color: #ffffff; /* Cor branca para harmonizar com o fundo escuro */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.api-link:hover {
+  color: #ccc; /* Muda a cor ao passar o mouse para melhor usabilidade */
 }

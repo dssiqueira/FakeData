@@ -98,65 +98,65 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Função para abrir o modal e carregar dados da API ViaCEP
-document.getElementById('mapa-cep-btn').addEventListener('click', async function () {
-    const cep = document.getElementById('cep-gerado').textContent.replace(/\D/g, ''); // Obtém o CEP sem a máscara
-    if (!cep) return;
+document.getElementById('mapa-cep-btn').addEventListener('click', async function() {
+  const cep = document.getElementById('cep-gerado').textContent.replace(/\D/g, ''); // Obtém o CEP sem a máscara
+  if (!cep) return;
 
-    const modal = document.getElementById('cep-modal');
-    const cepInfoDiv = document.getElementById('cep-info');
+  const modal = document.getElementById('cep-modal');
+  const cepInfoDiv = document.getElementById('cep-info');
 
-    // Limpa o conteúdo do modal antes de carregá-lo
-    cepInfoDiv.innerHTML = '<p>Carregando informações...</p>';
+  // Limpa o conteúdo do modal antes de carregá-lo
+  cepInfoDiv.innerHTML = '<p>Carregando informações...</p>';
 
-    try {
-        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-        const data = await response.json();
-        if (data.erro) {
-            cepInfoDiv.innerHTML = '<p>CEP inválido ou não encontrado.</p>';
-        } else {
-            // Renderizando os campos retornados pela API ViaCEP
-            const fields = [
-                { label: 'CEP', value: data.cep },
-                { label: 'Logradouro', value: data.logradouro },
-                { label: 'Complemento', value: data.complemento },
-                { label: 'Bairro', value: data.bairro },
-                { label: 'Localidade', value: data.localidade },
-                { label: 'Estado', value: data.uf },
-                { label: 'IBGE', value: data.ibge },
-                { label: 'DDD', value: data.ddd }
-            ];
+  try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
+      if (data.erro) {
+          cepInfoDiv.innerHTML = '<p>CEP inválido ou não encontrado.</p>';
+      } else {
+          // Renderizando os campos retornados pela API ViaCEP
+          const fields = [
+              { label: 'CEP', value: data.cep },
+              { label: 'Logradouro', value: data.logradouro },
+              { label: 'Complemento', value: data.complemento },
+              { label: 'Bairro', value: data.bairro },
+              { label: 'Localidade', value: data.localidade },
+              { label: 'Estado', value: data.uf },
+              { label: 'IBGE', value: data.ibge },
+              { label: 'DDD', value: data.ddd }
+          ];
 
-            // Exibe os dados no modal de forma similar ao layout principal
-            cepInfoDiv.innerHTML = fields.map(field => `
-                <div class="output-container-modal">
-                    <p>${field.label}: ${field.value || '-'}</p>
-                    <button class="copy-btn-modal" data-value="${field.value}">
-                        <i class="fas fa-copy"></i>
-                        <span class="tooltip-modal">Copiado!</span>
-                    </button>
-                </div>
-            `).join('');
+          // Exibe os dados no modal de forma similar ao layout principal
+          cepInfoDiv.innerHTML = fields.map(field => `
+              <div class="output-container-modal">
+                  <p>${field.label}: ${field.value || '-'}</p>
+                  <button class="copy-btn-modal" data-value="${field.value}">
+                      <i class="fas fa-copy"></i>
+                      <span class="tooltip-modal">Copiado!</span>
+                  </button>
+              </div>
+          `).join('');
 
-            // Adiciona o comportamento de copiar
-            document.querySelectorAll('.copy-btn-modal').forEach(button => {
-                button.addEventListener('click', function () {
-                    const textToCopy = this.getAttribute('data-value');
-                    navigator.clipboard.writeText(textToCopy).then(() => {
-                        this.classList.add('copied');
-                        setTimeout(() => this.classList.remove('copied'), 2000);
-                    });
-                });
-            });
+          // Adiciona o comportamento de copiar
+          document.querySelectorAll('.copy-btn-modal').forEach(button => {
+              button.addEventListener('click', function() {
+                  const textToCopy = this.getAttribute('data-value');
+                  navigator.clipboard.writeText(textToCopy).then(() => {
+                      this.classList.add('copied');
+                      setTimeout(() => this.classList.remove('copied'), 2000);
+                  });
+              });
+          });
 
-            // Exibe o modal
-            modal.style.display = 'block';
-        }
-    } catch (error) {
-        cepInfoDiv.innerHTML = `<p>Erro ao buscar informações do CEP.</p>`;
-    }
+          // Exibe o modal
+          modal.style.display = 'flex';
+      }
+  } catch (error) {
+      cepInfoDiv.innerHTML = `<p>Erro ao buscar informações do CEP.</p>`;
+  }
 });
 
 // Fechar o modal
-document.querySelector('.close').addEventListener('click', function () {
-    document.getElementById('cep-modal').style.display = 'none';
+document.getElementById('close-modal-btn').addEventListener('click', function() {
+  document.getElementById('cep-modal').style.display = 'none';
 });

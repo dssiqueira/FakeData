@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         chrome.storage.local.set({ apiKey }, function () {
             // Mostrar mensagem de sucesso
-            msgElement.innerHTML = '<i class="fas fa-check-circle"></i> Chave API salva com sucesso!';
             msgElement.classList.add('visible');
+            msgElement.innerHTML = '<i class="fas fa-check-circle"></i> Chave API salva com sucesso!';
 
             // Exibir animação de confetes
             confetti({

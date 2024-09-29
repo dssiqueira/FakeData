@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title>Configurações - Fake Data</title>
     <link rel="stylesheet" href="config.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="libs/confetti.browser.min.js"></script>
 </head>
 <body>
-    <h1>Configurações</h1>
-    <label for="api-key">Chave da API:</label>
-    <input type="text" id="api-key" placeholder="Insira a chave da API aqui">
-    <div id="success-message"><i class="fas fa-check-circle"></i> Configuração salva com sucesso!</div>
-    <button id="save-btn">Salvar</button>
-    <button id="back-btn">Voltar</button>
-    
+    <div class="config-container">
+        <button id="back-btn" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1>Configurações</h1>
+        <label for="api-key">Chave da API:</label>
+        <input type="text" id="api-key" placeholder="Digite sua chave API aqui...">
+        <p id="success-message" class="hidden">Chave API salva com sucesso!</p>
+        <button id="save-btn" class="action-btn">Salvar</button>
+    </div>
     <script src="config.js"></script>
 </body>
 </html>
