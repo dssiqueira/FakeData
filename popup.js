@@ -38,18 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const version = manifestData.version;
     document.getElementById('version').textContent = ` - Versão ${version}`;
 
-    // Inicialização para esconder os botões de copiar e mascarar até que um documento seja gerado
+    // Inicialização para esconder os botões de copiar, mascarar, e outros ícones até que um documento seja gerado
     const ids = ['cpf', 'cnpj', 'cep', 'cns', 'passaporte', 'cnh', 'pis', 'titulo', 'rg', 'ctps', 'ie', 'nit', 'crlv', 'cam'];
 
     ids.forEach(id => {
-        document.getElementById(`copiar-${id}-btn`).style.display = 'none';
-        const mascararBtn = document.getElementById(`mascarar-${id}-btn`);
-        if (mascararBtn) {
-            mascararBtn.style.display = 'none';
+        const copiarButton = document.getElementById(`copiar-${id}-btn`);
+        const mascararButton = document.getElementById(`mascarar-${id}-btn`);
+        const extraButton = document.getElementById(`globo-${id}-btn`) || document.getElementById(`mapa-${id}-btn`);
+        
+        if (copiarButton) {
+            copiarButton.style.display = 'none';
+        }
+        if (mascararButton) {
+            mascararButton.style.display = 'none';
+        }
+        if (extraButton) {
+            extraButton.style.display = 'none';
         }
     });
 
-    // Função para incrementar contagem de estatísticas
+    // Função para incrementar a contagem de estatísticas
     function incrementarContagem(chave) {
         chrome.storage.local.get([chave], function (result) {
             const count = result[chave] || 0;
@@ -60,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adicionar eventos de clique explícitos para cada botão de gerar documento
     const eventosGerarDocumentos = {
         'gerar-cpf-btn': { func: gerarCPF, outputId: 'cpf-gerado', copiarId: 'copiar-cpf-btn', mascararId: 'mascarar-cpf-btn', key: 'cpfCount' },
-        'gerar-cnpj-btn': { func: gerarCNPJ, outputId: 'cnpj-gerado', copiarId: 'copiar-cnpj-btn', mascararId: 'mascarar-cnpj-btn', key: 'cnpjCount' },
+        'gerar-cnpj-btn': { func: gerarCNPJ, outputId: 'cnpj-gerado', copiarId: 'copiar-cnpj-btn', mascararId: 'mascarar-cnpj-btn', key: 'cnpjCount', extraId: 'globo-cnpj-btn' },
         'gerar-cep-btn': { func: gerarCEP, outputId: 'cep-gerado', copiarId: 'copiar-cep-btn', mascararId: 'mascarar-cep-btn', key: 'cepCount', extraId: 'mapa-cep-btn' },
         'gerar-cns-btn': { func: gerarCns, outputId: 'cns-gerado', copiarId: 'copiar-cns-btn', mascararId: 'mascarar-cns-btn', key: 'cnsCount' },
         'gerar-passaporte-btn': { func: gerarPassaporte, outputId: 'passaporte-gerado', copiarId: 'copiar-passaporte-btn', key: 'passaporteCount' },
@@ -75,14 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
         'gerar-cam-btn': { func: gerarCAM, outputId: 'cam-gerado', copiarId: 'copiar-cam-btn', key: 'camCount' }
     };
 
-    for (let [btnId, { func, outputId, copiarId, mascararId, key, extraId }] of Object.entries(eventosGerarDocumentos)) {
-        document.getElementById(btnId).addEventListener('click', async () => {
+    for (let [botaoId, { func, outputId, copiarId, mascararId, key, extraId }] of Object.entries(eventosGerarDocumentos)) {
+        document.getElementById(botaoId).addEventListener('click', async () => {
             const valorGerado = await func();
             document.getElementById(outputId).textContent = valorGerado;
-            document.getElementById(copiarId).style.display = 'inline-block';
-            if (mascararId) document.getElementById(mascararId).style.display = 'inline-block';
-            if (extraId) document.getElementById(extraId).style.display = 'inline-block';
+            
+            // Mostrar botão de copiar, mascarar e ícone adicional, se existirem
+            if (document.getElementById(copiarId)) {
+                document.getElementById(copiarId).style.display = 'inline-block';
+            }
+            if (mascararId && document.getElementById(mascararId)) {
+                document.getElementById(mascararId).style.display = 'inline-block';
+            }
+            if (extraId && document.getElementById(extraId)) {
+                document.getElementById(extraId).style.display = 'inline-block';
+            }
 
+            // Incrementar a contagem
             incrementarContagem(key);
         });
     }
@@ -98,19 +115,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Função para abrir o modal e carregar dados da API ViaCEP
-document.getElementById('mapa-cep-btn').addEventListener('click', async function() {
+document.getElementById('mapa-cep-btn').addEventListener('click', async function () {
   const cep = document.getElementById('cep-gerado').textContent.replace(/\D/g, ''); // Obtém o CEP sem a máscara
   if (!cep) return;
 
   const modal = document.getElementById('cep-modal');
   const cepInfoDiv = document.getElementById('cep-info');
+  const loadingSpinner = document.getElementById('loading-spinner-cep');
 
-  // Limpa o conteúdo do modal antes de carregá-lo
-  cepInfoDiv.innerHTML = '<p>Carregando informações...</p>';
+  // Exibir o modal e o spinner de carregamento
+  cepInfoDiv.style.display = 'none';
+  loadingSpinner.style.display = 'block';
+  modal.style.display = 'flex';
 
   try {
       const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
       const data = await response.json();
+
+      // Esconde o spinner após o carregamento
+      loadingSpinner.style.display = 'none';
+      cepInfoDiv.style.display = 'block';
+
       if (data.erro) {
           cepInfoDiv.innerHTML = '<p>CEP inválido ou não encontrado.</p>';
       } else {
@@ -126,7 +151,7 @@ document.getElementById('mapa-cep-btn').addEventListener('click', async function
               { label: 'DDD', value: data.ddd }
           ];
 
-          // Exibe os dados no modal de forma similar ao layout principal
+          // Exibe os dados no modal
           cepInfoDiv.innerHTML = fields.map(field => `
               <div class="output-container-modal">
                   <p>${field.label}: ${field.value || '-'}</p>
@@ -136,27 +161,82 @@ document.getElementById('mapa-cep-btn').addEventListener('click', async function
                   </button>
               </div>
           `).join('');
-
-          // Adiciona o comportamento de copiar
-          document.querySelectorAll('.copy-btn-modal').forEach(button => {
-              button.addEventListener('click', function() {
-                  const textToCopy = this.getAttribute('data-value');
-                  navigator.clipboard.writeText(textToCopy).then(() => {
-                      this.classList.add('copied');
-                      setTimeout(() => this.classList.remove('copied'), 2000);
-                  });
-              });
-          });
-
-          // Exibe o modal
-          modal.style.display = 'flex';
       }
   } catch (error) {
+      // Esconde o spinner em caso de erro
+      loadingSpinner.style.display = 'none';
+      cepInfoDiv.style.display = 'block';
       cepInfoDiv.innerHTML = `<p>Erro ao buscar informações do CEP.</p>`;
   }
 });
 
 // Fechar o modal
 document.getElementById('close-modal-btn').addEventListener('click', function() {
-  document.getElementById('cep-modal').style.display = 'none';
+    document.getElementById('cep-modal').style.display = 'none';
+});
+
+// Adicionar eventos de clique explícitos para o CNPJ
+document.getElementById('globo-cnpj-btn').addEventListener('click', async function () {
+  const cnpj = document.getElementById('cnpj-gerado').textContent.replace(/\D/g, ''); // Remover caracteres especiais
+  if (!cnpj) return;
+
+  const modal = document.getElementById('cnpj-modal');
+  const cnpjInfoDiv = document.getElementById('cnpj-info');
+  const loadingSpinner = document.getElementById('loading-spinner-cnpj');
+
+  // Exibir o modal e o spinner de carregamento
+  cnpjInfoDiv.style.display = 'none';
+  loadingSpinner.style.display = 'block';
+  modal.style.display = 'block';
+
+  try {
+      const response = await fetch(`https://publica.cnpj.ws/cnpj/${cnpj}`);
+      const data = await response.json();
+
+      // Esconde o spinner após o carregamento
+      loadingSpinner.style.display = 'none';
+      cnpjInfoDiv.style.display = 'block';
+
+      if (data.erro) {
+          cnpjInfoDiv.innerHTML = '<p>CNPJ inválido ou não encontrado.</p>';
+      } else {
+          // Renderizando os campos retornados pela API
+          const fields = [
+              { label: 'Razão Social', value: data.razao_social },
+              { label: 'Capital Social', value: data.capital_social },
+              { label: 'Porte', value: data.porte?.descricao },
+              { label: 'Natureza Jurídica', value: data.natureza_juridica?.descricao },
+              { label: 'Data de Início da Atividade', value: data.estabelecimento?.data_inicio_atividade },
+              { label: 'Situação Cadastral', value: data.estabelecimento?.situacao_cadastral },
+              { label: 'Atividade Principal', value: data.estabelecimento?.atividade_principal?.descricao },
+              { label: 'Telefone', value: `${data.estabelecimento?.ddd1} ${data.estabelecimento?.telefone1}` },
+              { label: 'Logradouro', value: `${data.estabelecimento?.tipo_logradouro} ${data.estabelecimento?.logradouro}, ${data.estabelecimento?.numero}` },
+              { label: 'Bairro', value: data.estabelecimento?.bairro },
+              { label: 'Cidade', value: `${data.cidade?.nome} - ${data.estado?.sigla}` }
+          ];
+
+          // Exibe os dados no modal
+          cnpjInfoDiv.innerHTML = fields.map(field => `
+              <div class="output-container-cnpj">
+                  <p><strong>${field.label}:</strong> ${field.value || '-'}</p>
+                  <button class="copy-btn-modal" data-value="${field.value}">
+                      <i class="fas fa-copy"></i>
+                      <span class="tooltip-modal">Copiado!</span>
+                  </button>
+              </div>
+          `).join('');
+      }
+  } catch (error) {
+      // Esconde o spinner em caso de erro
+      loadingSpinner.style.display = 'none';
+      cnpjInfoDiv.style.display = 'block';
+      cnpjInfoDiv.innerHTML = `<p>Erro ao buscar informações do CNPJ.</p>`;
+  }
+});
+
+// Fechar o modal de CNPJ
+document.querySelectorAll('.close').forEach(button => {
+    button.addEventListener('click', function() {
+        document.getElementById('cnpj-modal').style.display = 'none';
+    });
 });

@@ -37,14 +37,18 @@
     <div class="container" data-doc="CNPJ">
       <button id="gerar-cnpj-btn" class="btn-cnpj">Gerar CNPJ</button>
       <div class="output-container">
-        <p id="cnpj-gerado" class="output"></p>
-        <div class="icons">
-          <button id="mascarar-cnpj-btn" class="mascarar-btn"><i class="fas fa-masks-theater"></i></button>
-          <button id="copiar-cnpj-btn" class="copiar-btn"><i class="fas fa-copy"></i></button>
-          <span class="tooltip">Copiado!</span>
-        </div>
+          <p id="cnpj-gerado" class="output"></p>
+          <div class="icons">
+              <button id="globo-cnpj-btn" class="mapa-btn">
+                  <i class="fas fa-globe"></i>
+              </button>
+              <button id="copiar-cnpj-btn" class="copiar-btn">
+                  <i class="fas fa-copy"></i>
+                  <span class="tooltip">Copiado!</span>
+              </button>
+          </div>
       </div>
-    </div>
+  </div>
 
     <div class="container" data-doc="CEP">
       <button id="gerar-cep-btn" class="btn-cep">Gerar CEP</button>
@@ -188,9 +192,27 @@
     <h2>Informações do CEP</h2>
     <p class="api-note">
       <a href="https://viacep.com.br/" target="_blank" class="api-link">API ViaCEP</a>
-  </p>
+    </p>
+    <!-- Spinner de carregamento -->
+    <div id="loading-spinner-cep" class="spinner" style="display: none;"></div>
     <div id="cep-info"></div>
     <button id="close-modal-btn" class="close">&times;</button>
+  </div>
+</div>
+
+<!-- Modal para exibir as informações do CNPJ -->
+<div id="cnpj-modal" class="modal" style="display: none;">
+  <div class="modal-content modal-content-cnpj">
+    <button class="close">&times;</button>
+    <h2>Informações do CNPJ</h2>
+    <p class="api-note">
+      <a href="https://publica.cnpj.ws/" target="_blank" class="api-link">CNPJ.ws</a>
+    </p>
+    <!-- Spinner de carregamento -->
+    <div id="loading-spinner-cnpj" class="spinner" style="display: none;"></div>
+    <div id="cnpj-info">
+      <!-- Informações do CNPJ serão preenchidas aqui via JavaScript -->
+    </div>
   </div>
 </div>
 
@@ -198,8 +220,8 @@
     <p>Desenvolvedor <i class="fas fa-heart"></i> <a href="https://dsiqueira.com" target="_blank">Dsiqueira</a><span id="version"></span></p>
   </footer>
 
-  <script src="mascarar.js"></script>
   <script src="copiar.js"></script>
   <script type="module" src="popup.js"></script>
+  <script type="module" src="mascarar.js"></script>
 </body>
 </html>
