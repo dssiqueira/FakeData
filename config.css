@@ -73,6 +73,12 @@ input[type="text"]::placeholder {
     font-weight: 100;
 }
 
+/* Estilos para o contêiner dos botões de ação */
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
 .action-btn {
     padding: 10px 20px;
     background-color: #007bff;
@@ -80,13 +86,32 @@ input[type="text"]::placeholder {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    flex: 1;
     height: 50px;
     font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .action-btn:hover {
     background-color: #0056b3;
+}
+
+/* Botão de limpar estatísticas */
+.btn-clear-stats {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    flex: 1;
+    height: 50px;
+    transition: background-color 0.3s;
+}
+
+.btn-clear-stats:hover {
+    background-color: #ff3333;
 }
 
 /* Botão de voltar */
