@@ -59,10 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para incrementar a contagem de estatísticas
     function incrementarContagem(chave) {
-        chrome.storage.local.get([chave], function (result) {
-            const count = result[chave] || 0;
-            chrome.storage.local.set({ [chave]: count + 1 });
-        });
+        if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
+            chrome.storage.local.get([chave], function (result) {
+                const count = result[chave] || 0;
+                chrome.storage.local.set({ [chave]: count + 1 });
+            });
+        } else {
+            console.warn("chrome.storage.local não está disponível.");
+        }
     }
 
     // Adicionar eventos de clique explícitos para cada botão de gerar documento
