@@ -122,3 +122,25 @@ body {
     font-size: 18px;
     margin-top: 5px;
   }
+
+  /* Estilo para o empty state */
+#empty-state {
+  display: none; /* Oculto por padrão */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+#empty-state i {
+  font-size: 48px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+#empty-state p {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 300px;
+}
