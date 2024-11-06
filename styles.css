@@ -379,3 +379,29 @@ footer i {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Estilos para o scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #1c3a5d; /* Cor do fundo do track do scroll */
+  border-radius: 5px; /* Borda arredondada para combinar com o layout */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4a6fa5; /* Cor do scroll */
+  border-radius: 5px; /* Borda arredondada para suavizar */
+  border: 2px solid #183153; /* Borda ao redor do thumb para dar um efeito */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3a5f8d; /* Cor mais escura ao passar o mouse */
+}
+
+/* Aplicação para Firefox */
+* {
+  scrollbar-width: thin; /* Define a largura do scroll para fino */
+  scrollbar-color: #4a6fa5 #1c3a5d; /* thumb cor de fundo do track */
+}
