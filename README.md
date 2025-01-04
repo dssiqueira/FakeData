@@ -10,7 +10,7 @@
 <div align="center">
   <img src="./icons/icon128.png" alt="Logo Fake Data Generator" width="128" height="128">
   
-  <img src="./docs/interface.png" alt="Interface da Extensão" width="600">
+  <img src="./screenshot.png" alt="Interface da Extensão" width="600">
 </div>
 
 ## ⚠️ Aviso Legal Importante
@@ -28,13 +28,33 @@ Esta extensão foi desenvolvida para auxiliar desenvolvedores e testadores a ger
 
 ## ✨ Funcionalidades
 
-- Geração de **CPF** válido com ou sem máscara
-- Geração de **CNPJ** válido com ou sem máscara
-- Geração de **CEP** válido
-- Geração de **CNS** (Cartão Nacional de Saúde) válido
-- Geração de **Passaporte** válido
-- Interface intuitiva e fácil de usar
-- Cópia rápida dos dados gerados com um clique
+### 📑 Documentos de Pessoa Física
+- **CPF** (Cadastro de Pessoas Físicas)
+- **RG** (Registro Geral)
+- **CNH** (Carteira Nacional de Habilitação)
+- **Título de Eleitor**
+- **PIS** (Programa de Integração Social)
+- **CTPS** (Carteira de Trabalho e Previdência Social)
+- **NIT** (Número de Identificação do Trabalhador)
+- **CNS** (Cartão Nacional de Saúde)
+- **CAM** (Certificado de Alistamento Militar)
+- **Passaporte**
+- **CEP** (Código de Endereçamento Postal)
+
+### 🏢 Documentos de Pessoa Jurídica
+- **CNPJ** (Cadastro Nacional da Pessoa Jurídica)
+- **IE** (Inscrição Estadual)
+
+### 🚗 Documentos de Veículos
+- **CRLV** (Certificado de Registro e Licenciamento de Veículo)
+
+### ⚡ Recursos Adicionais
+- Interface intuitiva e responsiva
+- Busca rápida de documentos
+- Opção de copiar com ou sem máscara
+- Visualização de CEP no mapa
+- Consulta de dados de CNPJ
+- Estatísticas de uso
 
 ## ⚙️ Instalação
 
