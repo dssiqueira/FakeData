@@ -1,6 +1,17 @@
 # 🚀 Fake Data Generator - Extensão Chrome
 
-![Interface da Extensão](screenshot.png)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/dssiqueira/FakeData)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red.svg)](https://github.com/dssiqueira)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-green.svg)](https://github.com/dssiqueira/FakeData)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/dssiqueira/FakeData/pulls)
+[![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/dssiqueira/FakeData/graphs/commit-activity)
+
+<div align="center">
+  <img src="./icons/icon128.png" alt="Logo Fake Data Generator" width="128" height="128">
+  
+  <img src="./docs/interface.png" alt="Interface da Extensão" width="600">
+</div>
 
 ## ⚠️ Aviso Legal Importante
 
