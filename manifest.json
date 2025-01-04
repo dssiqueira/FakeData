@@ -20,10 +20,13 @@
       "scripting",
       "storage"
     ],
+    "web_accessible_resources": [{
+      "resources": ["valid_ceps.json"],
+      "matches": ["<all_urls>"]
+    }],
     "icons": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
   }
-  
