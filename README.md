@@ -1,75 +1,65 @@
-# 🚀 Fake Data Generator - Chrome Extension
+# 🚀 Fake Data Generator - Extensão Chrome
 
-![Extension Preview](https://via.placeholder.com/800x400.png?text=Fake+Data+Generator+Preview)
+![Interface da Extensão](screenshot.png)
 
-> Geração rápida e fácil de CPF, CNPJ, CNH e outros documentos válidos diretamente no seu navegador Chrome! Esta extensão foi desenvolvida para ajudar desenvolvedores e testadores a gerarem dados válidos para seus projetos de forma simples e rápida.
+## ⚠️ Aviso Legal Importante
 
-## 📋 Índice
+> Esta extensão é uma ferramenta desenvolvida **EXCLUSIVAMENTE** para fins de teste e desenvolvimento de software. Não possui qualquer finalidade comercial ou fraudulenta.
+>
+> - ✅ Utiliza apenas algoritmos e dados públicos disponíveis abertamente na internet
+> - ✅ Não armazena ou transmite dados pessoais
+> - ✅ Em conformidade com a LGPD (Lei Geral de Proteção de Dados)
+> - ❌ NÃO deve ser utilizada para fins fraudulentos ou comerciais
 
-- [Funcionalidades](#funcionalidades)
-- [Instalação](#instalação)
-- [Como Usar](#como-usar)
-- [Capturas de Tela](#capturas-de-tela)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contato](#contato)
+## 📋 Sobre o Projeto
+
+Esta extensão foi desenvolvida para auxiliar desenvolvedores e testadores a gerarem dados válidos para seus projetos de forma simples e rápida. É uma ferramenta essencial para testes de software, permitindo a geração de dados que respeitam as regras de validação brasileiras.
 
 ## ✨ Funcionalidades
 
-- Geração de **CPF** válido com ou sem máscara.
-- Geração de **CNPJ** válido com ou sem máscara.
-- Geração de **CNH** válida.
-- Geração de **PIS/PASEP** válido.
-- Geração de **CRLV** (Certificado de Registro e Licenciamento de Veículo).
-- Geração de **Passaporte** válido.
-- Geração de **CAM** (Cadastro de Atividades Médicas) válido.
-- Copie os dados gerados com um clique.
-- Interface simples, elegante e fácil de usar.
+- Geração de **CPF** válido com ou sem máscara
+- Geração de **CNPJ** válido com ou sem máscara
+- Geração de **CEP** válido
+- Geração de **CNS** (Cartão Nacional de Saúde) válido
+- Geração de **Passaporte** válido
+- Interface intuitiva e fácil de usar
+- Cópia rápida dos dados gerados com um clique
 
 ## ⚙️ Instalação
 
 1. Clone este repositório:
     ```bash
-    git clone https://github.com/seu-usuario/fake-data-generator.git
+    git clone https://github.com/dssiqueira/FakeData.git
     ```
-2. Abra o Chrome e vá para `chrome://extensions/`.
-3. Ative o **Modo do desenvolvedor** no canto superior direito.
-4. Clique em **Carregar sem compactação** e selecione a pasta do projeto clonado.
+2. Abra o Chrome e acesse `chrome://extensions/`
+3. Ative o **Modo do desenvolvedor** no canto superior direito
+4. Clique em **Carregar sem compactação** e selecione a pasta do projeto clonado
 
 ## 🖱️ Como Usar
 
-1. Clique no ícone da extensão no canto superior direito do Chrome.
-2. Escolha o tipo de dado que deseja gerar: **CPF**, **CNPJ**, **CNH**, **PIS/PASEP**, **CRLV**, **Passaporte** ou **CAM**.
-3. Clique no botão de **Gerar**.
-4. Use os botões de **Mascarar** para aplicar a formatação ou **Copiar** para copiar o dado gerado para a área de transferência.
-5. Pronto! Agora você tem um dado válido para usar onde precisar.
-
-## 🖼️ Capturas de Tela
-
-### Tela Principal
-
-![Main Screen](https://via.placeholder.com/600x300.png?text=Main+Screen+Preview)
-
-### CPF Gerado
-
-![CPF Gerado](https://via.placeholder.com/600x300.png?text=CPF+Gerado)
+1. Clique no ícone da extensão na barra de ferramentas do Chrome
+2. Escolha o tipo de dado que deseja gerar
+3. O dado será gerado automaticamente
+4. Use os botões disponíveis para copiar ou formatar o dado gerado
 
 ## 🤝 Contribuição
 
-Contribuições são sempre bem-vindas! Se você tem sugestões, melhorias ou encontrou algum bug, fique à vontade para abrir uma issue ou enviar um pull request.
+Contribuições são bem-vindas! Se você tem sugestões ou encontrou algum bug:
 
-### Passos para contribuir:
-
-1. Fork este repositório.
-2. Crie uma nova branch: `git checkout -b minha-nova-feature`.
-3. Faça suas alterações e commite: `git commit -m 'Adiciona minha nova feature'`.
-4. Envie para o GitHub: `git push origin minha-nova-feature`.
-5. Abra um Pull Request.
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Faça commit das mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
 
 ## 📜 Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 📧 Contato
 
-Feito com 💖 por [Dsiqueira](https://dsiqueira.com). Entre em contato comigo em caso de dúvidas ou sugestões!
+Desenvolvido com ❤️ por [Dsiqueira](https://github.com/dssiqueira) - Versão 1.0
+
+---
+
+**Lembre-se**: Esta ferramenta deve ser utilizada apenas para fins de desenvolvimento e testes de software.
