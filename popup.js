@@ -18,18 +18,23 @@ import { gerarIE } from './documentos-brasil/pessoa-juridica/gerarIE.js';
 // Importação da função para gerar documentos de automóveis
 import { gerarCRLV } from './documentos-brasil/automovel/gerarCRLV.js';
 
+// Utilitário simples de debounce para otimizar eventos de input
+function debounce(fn, delay) {
+    let t;
+    return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(null, args), delay);
+    };
+}
+
 // Lógica para busca de documentos
-document.getElementById('search-bar').addEventListener('input', (event) => {
+document.getElementById('search-bar').addEventListener('input', debounce((event) => {
     const query = event.target.value.toLowerCase();
     document.querySelectorAll('.container').forEach(container => {
         const docName = container.getAttribute('data-doc').toLowerCase();
-        if (docName.includes(query)) {
-            container.style.display = 'flex';
-        } else {
-            container.style.display = 'none';
-        }
+        container.style.display = docName.includes(query) ? 'flex' : 'none';
     });
-});
+}, 150));
 
 // Inicialização do DOM quando o conteúdo é carregado
 document.addEventListener('DOMContentLoaded', () => {

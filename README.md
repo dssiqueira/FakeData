@@ -11,6 +11,8 @@
   <img src="./icons/icon128.png" alt="Logo Fake Data Generator" width="128" height="128">
   
   <img src="./screenshot.png" alt="Interface da Extensão" width="600">
+  
+  <img src="./img/fakedata.gif" alt="Demonstração da Extensão em uso" width="600">
 </div>
 
 ## ⚠️ Aviso Legal Importante
