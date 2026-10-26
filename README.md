@@ -91,7 +91,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 📧 Contato
 
-Desenvolvido com ❤️ por [Dsiqueira](https://github.com/dssiqueira) - Versão 1.0
+Desenvolvido com ❤️ por [Douglas Siqueira](https://dsiqueira.com/sobre) · [dsiqueira.com](https://dsiqueira.com) - Versão 1.0
 
 ---
 
